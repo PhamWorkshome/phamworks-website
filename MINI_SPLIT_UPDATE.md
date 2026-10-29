@@ -1,0 +1,1 @@
+Added Exterior Mini-Split Line Cover Installation under General Home Repairs. Original photos are in assets/mini-split-before.jpg and assets/mini-split-after.jpg. The generic service card photo is unchanged. The wardrobe project is not included in this version. Upload the contents of phamworks-website-main to the GitHub repository root.
