@@ -42,3 +42,19 @@
 .hero-service-card:hover img{filter:brightness(1.06)}
 @media(max-width:850px){.hero-service-photos{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-service-card img{height:auto}}
 @media(max-width:480px){.hero-service-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.hero-service-card img{height:auto}.hero-service-card span{font-size:11px}}
+
+/* Real project before-and-after gallery */
+.work-section{background:#f6f8f6}.work-project{background:white;border:1px solid #dce5df;border-radius:16px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.05)}.work-pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:#e2e8e4}.work-pair figure{margin:0;min-width:0}.work-image{position:relative;aspect-ratio:4/3;background:#edf1ed}.work-image img{display:block;width:100%;height:100%;object-fit:contain}.work-tag{position:absolute;top:14px;left:14px;background:#0b5e4b;color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.08em;padding:8px 12px;border-radius:6px}.work-details{padding:22px 26px}.work-details h3{margin:0 0 7px;font-size:1.25rem}.work-details p{margin:0;color:#58665f}@media(max-width:650px){.work-pair{grid-template-columns:1fr}.work-image{aspect-ratio:4/3}}
+
+/* Interactive before / after: exact user-provided project photographs */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.before-after{--split:50%;position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#e9efeb;isolation:isolate;touch-action:pan-y}
+.before-after .compare-base,.before-after .compare-before img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.before-after .compare-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--split)) 0 0)}
+.before-after .compare-label{position:absolute;z-index:2;top:16px;padding:8px 12px;background:#0b5e4b;color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:6px;pointer-events:none}
+.compare-label-before{left:16px}.compare-label-after{right:16px}
+.before-after .compare-divider{position:absolute;z-index:3;top:0;bottom:0;left:var(--split);width:3px;background:#fff;box-shadow:0 0 0 1px #0003;transform:translateX(-50%);pointer-events:none}
+.before-after .compare-handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:white;color:#0b5e4b;border:2px solid #0b5e4b;box-shadow:0 4px 15px #0003;font-size:25px;font-weight:800}
+.before-after .compare-range{position:absolute;z-index:4;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+.before-after:focus-within{outline:3px solid #0b5e4b;outline-offset:3px}
+@media(max-width:650px){.before-after .compare-label{font-size:10px;top:9px;padding:6px 8px}.compare-label-before{left:9px}.compare-label-after{right:9px}.before-after .compare-handle{width:42px;height:42px}}

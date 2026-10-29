@@ -4,3 +4,6 @@ if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.to
 document.querySelector('#year').textContent=new Date().getFullYear();
 
 const galleryDialog=document.querySelector('.gallery-dialog');if(galleryDialog){const photo=galleryDialog.querySelector('img'),caption=galleryDialog.querySelector('p');document.querySelectorAll('.gallery-card').forEach(card=>card.addEventListener('click',()=>{photo.src=card.dataset.gallerySrc;photo.alt=card.dataset.galleryTitle;caption.textContent=card.dataset.galleryTitle;galleryDialog.showModal();}));galleryDialog.querySelector('.gallery-close').addEventListener('click',()=>galleryDialog.close());galleryDialog.addEventListener('click',e=>{if(e.target===galleryDialog)galleryDialog.close()});galleryDialog.addEventListener('close',()=>{photo.removeAttribute('src')})}
+
+// Accessible comparison slider: supports mouse, touch and keyboard.
+document.querySelectorAll('[data-before-after]').forEach(compare=>{const slider=compare.querySelector('.compare-range');const update=()=>compare.style.setProperty('--split',slider.value+'%');slider.addEventListener('input',update);update();});
